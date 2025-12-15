@@ -1,19 +1,91 @@
-/* Task 1: Style the body */
+/* Reset + Base */
+* {
+  box-sizing: border-box;
+}
+
 body {
-    /* insert code here */
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f4f7;
+  color: #1f2933;
 }
 
-/* Task 2: Create a pseudo-element for the background and blur */
+/* Background image with soft blur */
 body::before {
-    /* insert code here */
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/static/background-colors.jpg") center / cover no-repeat;
+  filter: blur(6px);
+  transform: scale(1.05);
+  z-index: -1;
 }
 
-/* Task 3: Style the content area */
+/* Main card */
 .content {
-    /* insert code here */
+  max-width: 620px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* Task 4: Add styles for headings, paragraphs, and buttons */
-h1, h2, .lead, .btn-primary {
-    /* insert code here */
+/* Typography */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 2.5rem;
+}
+
+/* Button */
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 2.2rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(79, 70, 229, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    margin: 1rem;
+    padding: 2.5rem 1.8rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
 }
